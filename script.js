@@ -68,7 +68,7 @@ function generatePassword() {
     userChoices = alert('You must choose a criteria');
 
   } else if (confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
-    userChoices = lowerCase.concat(upperCase, numbers, special);
+    userChoices = lowerCase.concat(lowerCase, upperCase, numbers, special);
     console.log(userChoices);
 
     //  If three options are selected
@@ -76,16 +76,16 @@ function generatePassword() {
   } else if (confirmLower && confirmUpper && confirmNumber) {
     userChoices = lowerCase.concat(upperCase, numbers);
     console.log(userChoices);
-  }
-  else if (confirmLower && confirmUpper && confirmSpecial) {
+  
+  } else if (confirmLower && confirmUpper && confirmSpecial) {
     userChoices = lowerCase.concat(upperCase, special);
     console.log(userChoices);
-  }
-  else if (confirmLower && confirmNumber && confirmSpecial) {
+  
+  } else if (confirmLower && confirmNumber && confirmSpecial) {
     userChoices = lowerCase.concat(numbers, special);
     console.log(userChoices);
-  }
-  else if (confirmUpper && confirmNumber && confirmSpecial) {
+  
+  } else if (confirmUpper && confirmNumber && confirmSpecial) {
     userChoices = upperCase.concat(numbers, special);
     console.log(userChoices);
 
@@ -94,42 +94,42 @@ function generatePassword() {
   } else if (confirmLower && confirmUpper) {
     userChoices = lowerCase.concat(upperCase);
     console.log(userChoices);
-  }
-  else if (confirmLower && confirmNumber) {
+
+  } else if (confirmLower && confirmNumber) {
     userChoices = lowerCase.concat(numbers);
     console.log(userChoices);
-  }
-  else if (confirmLower && confirmSpecial) {
+
+  } else if (confirmLower && confirmSpecial) {
     userChoices = lowerCase.concat(special);
     console.log(userChoices);
-  }
-  else if (confirmUpper && confirmNumber) {
+
+  } else if (confirmUpper && confirmNumber) {
     userChoices = upperCase.concat(numbers);
     console.log(userChoices);
-  }
-  else if (confirmUpper && confirmSpecial) {
+
+  } else if (confirmUpper && confirmSpecial) {
     userChoices = upperCase.concat(special);
     console.log(userChoices);
-  }
-  else if (confirmNumber && confirmSpecial) {
+
+  } else if (confirmNumber && confirmSpecial) {
     userChoices = numbers.concat(special);
     console.log(userChoices);
 
     // If one option is selected
 
   } else if (confirmLower) {
-    userChoices = lowerCase;
+    userChoices = lowerCase.concat(lowerCase);
     console.log(userChoices);
-  }
-  else if (confirmUpper) {
+  
+  } else if (confirmUpper) {
     userChoices = blankUpper.concat(upperCase);
     console.log(userChoices);
-  }
-  else if (confirmNumber) {
+  
+  } else if (confirmNumber) {
     userChoices = numbers;
     console.log(userChoices);
-  }
-  else if (confirmSpecial) {
+  
+  } else if (confirmSpecial) {
     userChoices = special;
     console.log(userChoices);
   };
