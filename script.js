@@ -83,7 +83,66 @@ function generatePassword() {
     userChoices = lowerCase.concat(numbers, special);
     console.log(userChoices);
   
-  } else if (confirmUpper)
+  } else if (confirmUpper && confirmNumber && confirmSpecial) {
+    userChoices = lowerCase.concat(numbers, special);
+    console.log(userChoices);
+  
+  // If two options are selected
+
+  } else if (confirmLower && confirmUpper) {
+    userChoices = lowerCase.concat(upperCase);
+    console.log(userChoices);
+  
+  } else if (confirmLower && confirmNumber) {
+    userChoices = lowerCase.concat(numbers);
+    console.log(userChoices);
+  
+  } else if (confirmLower && confirmSpecial) {
+    userChoices = lowerCase.concat(special);
+    console.log(userChoices);
+  
+  } else if (confirmUpper && confirmNumber) {
+    userChoices = lowerCase.concat(numbers);
+    console.log(userChoices);
+  
+  } else if (confirmUpper && confirmSpecial) {
+    userChoices = lowerCase.concat(special);
+    console.log(userChoices);
+  
+  } else if (confirmNumber && confirmSpecial) {
+    userChoices = lowerCase.concat(special);
+    console.log(userChoices);
+  
+  // If one option is selected
+  
+  } else if (confirmLower) {
+    userChoices = lowerCase;
+    console.log(userChoices);
+  
+  } else if (confirmUpper) {
+    userChoices = lowerCase;
+    console.log(userChoices);
+  
+  } else if (confirmNumber) {
+    userChoices = lowerCase;
+    console.log(userChoices);
+  
+  } else if (confirmSpecial) {
+    userChoices = lowerCase;
+    console.log(userChoices);
+  }
+
+  var passwordBlank = [];
+
+  for (var i = 0; i < passwordLength; i++) {
+    var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+    passwordBlank.push(allChoices);
+    console.log(allChoices);
+  }
+
+
+
+
 
 
 
