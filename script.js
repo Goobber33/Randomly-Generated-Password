@@ -35,20 +35,20 @@ generateBtn.addEventListener("click", writePassword);
 // The start of the function | User input
 
 function generatePassword() {
-  
+
   passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
   console.log("Password length " + passwordLength);
 
-   // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
-  
-   if(!passwordLength) {
+  // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
+
+  if (!passwordLength) {
     alert("Required value");
 
   } else if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("You must choose between 8 and 128");
     console.log("Password length " + passwordLength);
-  
-  } else { 
+
+  } else {
     confirmLower = confirm("Will this contain lower case letters?");
     console.log("Lower case " + confirmLower);
     confirmUpper = confirm("Will this contain upper case letters?");
@@ -76,17 +76,17 @@ function generatePassword() {
   } else if (confirmLower && confirmUpper && confirmNumber) {
     userChoices = lowerCase.concat(upperCase, numbers);
     console.log(userChoices);
-
-  } else if (confirmLower && confirmUpper && confirmSpecial) {
+  }
+  else if (confirmLower && confirmUpper && confirmSpecial) {
     userChoices = lowerCase.concat(upperCase, special);
     console.log(userChoices);
-
-  } else if (confirmLower && confirmNumber && confirmSpecial) {
+  }
+  else if (confirmLower && confirmNumber && confirmSpecial) {
     userChoices = lowerCase.concat(numbers, special);
     console.log(userChoices);
-
-  } else if (confirmUpper && confirmNumber && confirmSpecial) {
-    userChoices = lowerCase.concat(numbers, special);
+  }
+  else if (confirmUpper && confirmNumber && confirmSpecial) {
+    userChoices = upperCase.concat(numbers, special);
     console.log(userChoices);
 
     // If two options are selected
@@ -94,25 +94,25 @@ function generatePassword() {
   } else if (confirmLower && confirmUpper) {
     userChoices = lowerCase.concat(upperCase);
     console.log(userChoices);
-
-  } else if (confirmLower && confirmNumber) {
+  }
+  else if (confirmLower && confirmNumber) {
     userChoices = lowerCase.concat(numbers);
     console.log(userChoices);
-
-  } else if (confirmLower && confirmSpecial) {
+  }
+  else if (confirmLower && confirmSpecial) {
     userChoices = lowerCase.concat(special);
     console.log(userChoices);
-
-  } else if (confirmUpper && confirmNumber) {
-    userChoices = lowerCase.concat(numbers);
+  }
+  else if (confirmUpper && confirmNumber) {
+    userChoices = upperCase.concat(numbers);
     console.log(userChoices);
-
-  } else if (confirmUpper && confirmSpecial) {
-    userChoices = lowerCase.concat(special);
+  }
+  else if (confirmUpper && confirmSpecial) {
+    userChoices = upperCase.concat(special);
     console.log(userChoices);
-
-  } else if (confirmNumber && confirmSpecial) {
-    userChoices = lowerCase.concat(special);
+  }
+  else if (confirmNumber && confirmSpecial) {
+    userChoices = numbers.concat(special);
     console.log(userChoices);
 
     // If one option is selected
@@ -120,17 +120,17 @@ function generatePassword() {
   } else if (confirmLower) {
     userChoices = lowerCase;
     console.log(userChoices);
-
-  } else if (confirmUpper) {
-    userChoices = lowerCase;
+  }
+  else if (confirmUpper) {
+    userChoices = blankUpper.concat(upperCase);
     console.log(userChoices);
-
-  } else if (confirmNumber) {
-    userChoices = lowerCase;
+  }
+  else if (confirmNumber) {
+    userChoices = numbers;
     console.log(userChoices);
-
-  } else if (confirmSpecial) {
-    userChoices = lowerCase;
+  }
+  else if (confirmSpecial) {
+    userChoices = special;
     console.log(userChoices);
   };
 
