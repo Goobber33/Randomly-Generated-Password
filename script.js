@@ -40,7 +40,7 @@ function generatePassword() {
   if (!passwordLength) {
     alert('Required Value');
 
-    // Add else if statments to confirm what the user would like to be added into their password.
+    // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
 
   } else if (passwordLength < 8 || passwordLength > 30) {
     passwordLength = prompt('You must choose a password between 8 and 30 characters long');
@@ -58,5 +58,42 @@ function generatePassword() {
 
   };
 
+  // if and else if statements to return user data for password characters
+
+  // If all four options are selected
+
+  if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial) {
+    userChoices = alert('You must choose a criteria');
   
+  } else if (confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
+    userChoices = lowerCase.concat(upperCase, numbers, special);
+    console.log(userChoices);
+  
+    //  If three options are selected
+
+  } else if (confirmLower && confirmUpper && confirmNumber) {
+    userChoices = lowerCase.concat(upperCase, numbers);
+    console.log(userChoices);
+  
+  } else if (confirmLower && confirmUpper && confirmSpecial) {
+    userChoices = lowerCase.concat(upperCase, special);
+    console.log(userChoices);
+  
+  } else if (confirmLower && confirmNumber && confirmSpecial) {
+    userChoices = lowerCase.concat(numbers, special);
+    console.log(userChoices);
+  
+  } else if (confirmUpper)
+
+
+
+
+
+
+
+  var password = passwordBlank.join("");
+  console.log('Your Password is: ' + password);
+  return password;
+
+
 }
