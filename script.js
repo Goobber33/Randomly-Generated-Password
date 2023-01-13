@@ -12,7 +12,7 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 
 var blankUpper = [];
 var toUpper = function (x) {
-  return x.toUpperCase;
+  return x.toUpperCase();
 };
 upperCase = lowerCase.map(toUpper);
 
@@ -29,32 +29,34 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 // The start of the function | User input
 
 function generatePassword() {
-  passwordLength = prompt('How many characters would you like your password to be? Choose between 8 and 128');
-  console.log('Password length ' + passwordLength);
+  
+  passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
+  console.log("Password length " + passwordLength);
 
-  if (!passwordLength) {
-    alert('Required Value');
-
-    // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
+   // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
+  
+   if(!passwordLength) {
+    alert("Required value");
 
   } else if (passwordLength < 8 || passwordLength > 128) {
-    passwordLength = prompt('You must choose a password between 8 and 30 characters long');
-    console.log('Password length ' + passwordLength);
-
-  } else {
-    confirmLower = confirm('Will your password contain lower case letters?');
-    console.log('Lower cass ' + confirmLower);
-    confirmUpper = confirm('Will your password contain upper case letters?');
-    console.log('Upper case ' + confirmUpper);
-    confirmNumber = confirm('Will your password contain any numbers?');
-    console.log('Numbers ' + confirmNumber);
-    confirmSpecial = confirm('Will your password contain special characters?');
-    console.log('Special Character ' + confirmSpecial);
+    passwordLength = prompt("You must choose between 8 and 128");
+    console.log("Password length " + passwordLength);
+  
+  } else { 
+    confirmLower = confirm("Will this contain lower case letters?");
+    console.log("Lower case " + confirmLower);
+    confirmUpper = confirm("Will this contain upper case letters?");
+    console.log("Upper case " + confirmUpper);
+    confirmNumber = confirm("Will this contain numbers?");
+    console.log("Number " + confirmNumber);
+    confirmSpecial = confirm("Will this contain special characters?");
+    console.log("Special Character " + confirmSpecial);
 
   };
 
