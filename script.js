@@ -20,6 +20,7 @@ var useUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 var toUpper = function (z) {
   return z.toUpperCase();
 };
+
 upperCase = lowerCase.map(toUpper);
 
 // Numbers and special characters toi be entered in to generated password
@@ -151,7 +152,7 @@ function generatePassword() {
   }
 
   var password = noPassword.join("");
-  console.log("Your Password is: " + password);
+  console.log("Your Generated Password is: " + password);
   return password;
 
 
