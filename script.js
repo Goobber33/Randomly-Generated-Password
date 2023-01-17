@@ -2,15 +2,15 @@
 var generateBtn = document.querySelector("#generate");
 
 var passwordLength;
-var confirmLower;
-var confirmUpper;
-var confirmNumber
-var confirmSpecial;
-var userChoices;
+var caseLower;
+var caseUpper;
+var useNumber
+var useSpecial;
+var userSelection;
 
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-var blankUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var useUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var toUpper = function (x) {
   return x.toUpperCase();
 };
@@ -42,107 +42,107 @@ function generatePassword() {
   // Else and else if statements to confirm what the user would like to be added into their password. "confirm" will pop up a window on the screen
 
   if (!passwordLength) {
-    alert("Required value");
+    alert("Please describe your password length");
 
   } else if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("You must choose between 8 and 128");
     console.log("Password length " + passwordLength);
 
   } else {
-    confirmLower = confirm("Will this contain lower case letters?");
-    console.log("Lower case " + confirmLower);
-    confirmUpper = confirm("Will this contain upper case letters?");
-    console.log("Upper case " + confirmUpper);
-    confirmNumber = confirm("Will this contain numbers?");
-    console.log("Number " + confirmNumber);
-    confirmSpecial = confirm("Will this contain special characters?");
-    console.log("Special Character " + confirmSpecial);
+    caseLower = confirm("Will this contain lower case letters?");
+    console.log("Lower case " + caseLower);
+    caseUpper = confirm("Will this contain upper case letters?");
+    console.log("Upper case " + useUpper);
+    useNumber = confirm("Will this contain numbers?");
+    console.log("Number " + useNumber);
+    useSpecial = confirm("Will this contain special characters?");
+    console.log("Special Character " + useSpecial);
 
   };
 
   // if and else if statements to return user data for password characters
 
-  // If all four options are selected
+  // If all four options are selected, return a generated password with uppercase, lowercase, numbers and special characters.
 
-  if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial) {
-    userChoices = alert('You must choose a criteria');
+  if (!caseLower && !caseUpper && !useNumber && !useSpecial) {    // ----> If nothing is selected, return the message prompting to choose an option
+    userSelection = alert('Please generate a new password, and choose an option');
 
-  } else if (confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
-    userChoices = lowerCase.concat(lowerCase, upperCase, numbers, special);
-    console.log(userChoices);
+  } else if (caseLower && caseUpper && useNumber && useSpecial) {
+    userSelection = lowerCase.concat(lowerCase, upperCase, numbers, special);
+    console.log(userSelection);
 
-    //  If three options are selected
+    //  Three options selected, and will return a generated password with the options selected.
 
-  } else if (confirmLower && confirmUpper && confirmNumber) {
-    userChoices = lowerCase.concat(upperCase, numbers);
-    console.log(userChoices);
+  } else if (caseLower && caseUpper && useNumber) {
+    userSelection = lowerCase.concat(upperCase, numbers);
+    console.log(userSelection);
   
-  } else if (confirmLower && confirmUpper && confirmSpecial) {
-    userChoices = lowerCase.concat(upperCase, special);
-    console.log(userChoices);
+  } else if (caseLower && caseUpper && useSpecial) {
+    userSelection = lowerCase.concat(upperCase, special);
+    console.log(userSelection);
   
-  } else if (confirmLower && confirmNumber && confirmSpecial) {
-    userChoices = lowerCase.concat(numbers, special);
-    console.log(userChoices);
+  } else if (caseLower && useNumber && useSpecial) {
+    userSelection = lowerCase.concat(numbers, special);
+    console.log(userSelection);
   
-  } else if (confirmUpper && confirmNumber && confirmSpecial) {
-    userChoices = upperCase.concat(numbers, special);
-    console.log(userChoices);
+  } else if (caseUpper && useNumber && useSpecial) {
+    userSelection = upperCase.concat(numbers, special);
+    console.log(userSelection);
 
-    // If two options are selected
+    // Two options selected, and this will return a generated password with two of the options selected
 
-  } else if (confirmLower && confirmUpper) {
+  } else if (caseLower && caseUpper) {
     userChoices = lowerCase.concat(upperCase);
+    console.log(userSelection);
+
+  } else if (caseLower && useNumber) {
+    userSelection = lowerCase.concat(numbers);
+    console.log(userSelection);
+
+  } else if (caseLower && useSpecial) {
+    userSelection = lowerCase.concat(special);
+    console.log(userSelection);
+
+  } else if (caseUpper && useNumber) {
+    userSelection = upperCase.concat(numbers);
+    console.log(userSelection);
+
+  } else if (caseUpper && useSpecial) {
+    userSelection = upperCase.concat(special);
     console.log(userChoices);
 
-  } else if (confirmLower && confirmNumber) {
-    userChoices = lowerCase.concat(numbers);
-    console.log(userChoices);
+  } else if (useNumber && useSpecial) {
+    userSelection = numbers.concat(special);
+    console.log(userSelection);
 
-  } else if (confirmLower && confirmSpecial) {
-    userChoices = lowerCase.concat(special);
-    console.log(userChoices);
+    // If one option is selected, it will return a generated password with the option selected
 
-  } else if (confirmUpper && confirmNumber) {
-    userChoices = upperCase.concat(numbers);
-    console.log(userChoices);
-
-  } else if (confirmUpper && confirmSpecial) {
-    userChoices = upperCase.concat(special);
-    console.log(userChoices);
-
-  } else if (confirmNumber && confirmSpecial) {
-    userChoices = numbers.concat(special);
-    console.log(userChoices);
-
-    // If one option is selected
-
-  } else if (confirmLower) {
-    userChoices = lowerCase.concat(lowerCase);
-    console.log(userChoices);
+  } else if (caseLower) {
+    userSelection = lowerCase.concat(lowerCase);
+    console.log(userSelection);
   
-  } else if (confirmUpper) {
-    userChoices = blankUpper.concat(upperCase);
-    console.log(userChoices);
+  } else if (caseUpper) {
+    userSelection = upperCase.concat(upperCase);
+    console.log(userSelection);
   
-  } else if (confirmNumber) {
-    userChoices = numbers;
-    console.log(userChoices);
+  } else if (useNumber) {
+    userSelection = numbers;
+    console.log(userSelection);
   
-  } else if (confirmSpecial) {
-    userChoices = special;
-    console.log(userChoices);
+  } else if (useSpecial) {
+    userSelection = special;
+    console.log(userSelection);
   };
 
-  var passwordBlank = [];
+  var noPassword = [];
 
   for (var i = 0; i < passwordLength; i++) {
-    var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
-    passwordBlank.push(allChoices);
+    var allChoices = userSelection[Math.floor(Math.random() * userSelection.length)];
+    noPassword.push(allChoices);
     console.log(allChoices);
   }
 
-  var password = passwordBlank.join("");
+  var password = noPassword.join("");
   console.log("Your Password is: " + password);
   return password;
 
