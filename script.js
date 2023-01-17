@@ -17,8 +17,8 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 // uppercase characters to be entered in to generated password
 
 var useUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var toUpper = function (x) {
-  return x.toUpperCase();
+var toUpper = function (z) {
+  return z.toUpperCase();
 };
 upperCase = lowerCase.map(toUpper);
 
