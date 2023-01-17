@@ -1,6 +1,8 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// Unique variables describing which case use they have. 
+
 var passwordLength;
 var caseLower;
 var caseUpper;
@@ -8,7 +10,11 @@ var useNumber
 var useSpecial;
 var userSelection;
 
+// lower case characters to be entered in to generated password
+
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+// uppercase characters to be entered in to generated password
 
 var useUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var toUpper = function (x) {
@@ -16,10 +22,12 @@ var toUpper = function (x) {
 };
 upperCase = lowerCase.map(toUpper);
 
+// Numbers and special characters toi be entered in to generated password
+
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var special = ['`', '~!', '@', '#', '$', '%', '%', '^', '&', '*', '(', ')', '_', '-', '=', '+', '[', '{', ']', '}', '|', '\\', ';', ':', '"', ',', '<', '.', '>', '/', '?'];
 
-// Write password to the #password input
+// Write password function. 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
